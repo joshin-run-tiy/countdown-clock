@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Countdown Clock</title>
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main2.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="./assets/styles/reset.css" media="screen">
+  </head>
+  <body>
+    <table class="countdown-container"
+      <tbody>
+        <tr class="info">
+          <td colspan="4">Countdown Clock</td>
+        </tr>
+        <tr class="info">
+          <td id="days">120</td>
+          <td id="hours">4</td>
+          <td id="minutes">11</td>
+          <td id="seconds">22</td>
+        </tr>
+        <tr>
+          <td>Days</td>
+          <td>Hours</td>
+          <td>Minutes</td>
+          <td>Seconds</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <div class="dialog-container">
+      <button onclick="validateNumber(prompt('Enter any number'));">Default Prompt</button>
+      <button onclick="">Custom Prompt</button>
+      <div id="dialog-counter">
+        <div class="dialog-header">
+          <span id="dlgHeader">Custom Prompt</span>
+        </div>
+        <div class="dialog-body">
+          <div id="dlgMessage">dlgMessage</div>
+          <input id="dialogInputEl" type="text" class="dialog-input-element">
+        </div>
+        <div class="dialog-footer"></div>
+          <a onclick="">Okay</a>
+          <a onclick="">Cancel</a>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <script type="text/javascript" src="./assets/scripts/main.js"></script>
+  </body>
+</html>
