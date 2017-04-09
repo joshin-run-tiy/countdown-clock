@@ -148,7 +148,7 @@ a {
 }
 
 .dropdown a:hover {
-  background-color: darkslategray;
+  background-color: lightgray;
   color: #fff;
 }
 
