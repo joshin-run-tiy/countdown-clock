@@ -1,7 +1,9 @@
-function countdown() {
+function countdown(newEventDate) {
   let now = new Date()
-  let eventDate = new Date(2017, 11, 25);
+  let eventDate = new Date(2017, 3, 16);
+  // month is month number -1 (april = 4 - 1)
   let currentTime = now.getTime();
+  // eventdate = newEventDate;
   let eventTime = eventDate.getTime();
 
   let remTime = eventTime - currentTime;
@@ -27,44 +29,57 @@ function countdown() {
 }
 countdown();
 
+function popupDate () {
+  // if (document.addEventListener("click") === true) {
+    let newDay = prompt("Choose a day.");
+    let newMonthInput = prompt("Choose a month. (Use numbers)");
+    // let newMonth = newMonthInput - 1;
+    let newYear = prompt("Choose a year. (Use four digits)");
+    newEventDate = new Date(newYear, newMonth, newDay);
+    alert(newEventDate);
+    // countDown(newEventDate);
+  // }
+  // false;
+}
+
 function popupTitle() {
   let newTitle = prompt("What would you like to name your countdown clock?");
   document.getElementById('clockTitle').innerHTML = newTitle;
 }
 
-function popupDate() {
-  let newDay = prompt("Choose a day of the month.");
-  let newMonth = prompt("Choose a month out of the year. (Use numbers)");
-  let newYear = prompt("Choose a year. (Use four digits)");
-  function newCountdown() {
-    let now = new Date()
-    let eventDate = new Date(newYear, newMonth, newDay);
-    let currentTime = now.getTime();
-    let eventTime = eventDate.getTime();
-
-    let remTime = eventTime - currentTime;
-
-    let s = Math.floor(remTime / 1000);
-    let m = Math.floor(s / 60);
-    let h = Math.floor(m / 60);
-    let d = Math.floor(h / 24);
-    h %= 24;
-    m %= 60;
-    s %= 60;
-
-    h = (h < 10) ? "0" + h : h;
-    m = (m < 10) ? "0" + m : m;
-    s = (s < 10) ? "0" + s : s;
-
-    document.getElementById("days").innerText = d;
-    document.getElementById("hours").innerText = h;
-    document.getElementById("minutes").innerText = m;
-    document.getElementById("seconds").innerText = s;
-
-    setTimeout(countdown, 1000);
-  }
-  newCountdown();
-}
+// function popupDate() {
+//   let newDay = prompt("Choose a day of the month.");
+//   let newMonth = prompt("Choose a month out of the year. (Use numbers)");
+//   let newYear = prompt("Choose a year. (Use four digits)");
+//   function newCountdown() {
+//     let now = new Date()
+//     let eventDate = new Date(newYear, newMonth, newDay);
+//     let currentTime = now.getTime();
+//     let eventTime = eventDate.getTime();
+//
+//     let remTime = eventTime - currentTime;
+//
+//     let s = Math.floor(remTime / 1000);
+//     let m = Math.floor(s / 60);
+//     let h = Math.floor(m / 60);
+//     let d = Math.floor(h / 24);
+//     h %= 24;
+//     m %= 60;
+//     s %= 60;
+//
+//     h = (h < 10) ? "0" + h : h;
+//     m = (m < 10) ? "0" + m : m;
+//     s = (s < 10) ? "0" + s : s;
+//
+//     document.getElementById("days").innerText = d;
+//     document.getElementById("hours").innerText = h;
+//     document.getElementById("minutes").innerText = m;
+//     document.getElementById("seconds").innerText = s;
+//
+//     setTimeout(countdown, 1000);
+//   }
+//   newCountdown();
+// }
 
 
 //
