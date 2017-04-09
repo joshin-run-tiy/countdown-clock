@@ -136,7 +136,8 @@ a {
 }
 
 .dropdown-content a {
-    color: darkslategray;
+    /*color: lightgray;*/
+    color: slategray;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -145,10 +146,12 @@ a {
     border-radius: 0px;
     /*opacity: 1;*/
     margin-left: 23px;
+    border-top: 1px solid #f6f6f6;
+    text-align: center;
 }
 
 .dropdown a:hover {
-  background-color: lightgray;
+  background-color: slategray;
   color: #fff;
 }
 
