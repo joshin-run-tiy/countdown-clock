@@ -30,17 +30,21 @@ function countdown(newEventDate) {
 countdown();
 
 function popupDate () {
-  // if (document.addEventListener("click") === true) {
-    let newDay = prompt("Choose a day.");
-    let newMonthInput = prompt("Choose a month. (Use numbers)");
-    // let newMonth = newMonthInput - 1;
-    let newYear = prompt("Choose a year. (Use four digits)");
-    newEventDate = new Date(newYear, newMonth, newDay);
-    alert(newEventDate);
-    // countDown(newEventDate);
-  // }
-  // false;
+  alert('Hello Dev');
 }
+
+// function popupDate () {
+//   // if (document.addEventListener("click") === true) {
+//     let newDay = prompt("Choose a day.");
+//     let newMonthInput = prompt("Choose a month. (Use numbers)");
+//     // let newMonth = newMonthInput - 1;
+//     let newYear = prompt("Choose a year. (Use four digits)");
+//     newEventDate = new Date(newYear, newMonth, newDay);
+//     alert(newEventDate);
+//     // countDown(newEventDate);
+//   // }
+//   // false;
+// }
 
 function popupTitle() {
   let newTitle = prompt("What would you like to name your countdown clock?");
@@ -83,29 +87,30 @@ function popupTitle() {
 
 
 //
-// function validateNumber(number) {
-//   let msg = '';
-//   if (number != null) {
-//     if (isNaN(number)) {
-//       msg = 'The input is not a valid number';
-//     } else {
-//       msg = (number %2 == 0) ? "Even Number" : "Odd Number";
-//     }
-//   } else {
-//     msg = 'You cancelled the action';
-//   }
-//   document.getElementById('result').innerText = msg;
-// }
-//
-// let customPrompt = new function(msg, callback) {
-//   this.show = function() {
-//     let dlg = docuent.getElementById('dialog-container');
-//     dlg.style.top = '30%';
-//     dlg.style.opacity = 1;
-//     let dlgMessage = dlg.querySelector('#dlg-message');
-//
-//   };
-// }
+function validateNumber(number) {
+  let msg = '';
+  if (number != null) {
+    if (isNaN(number)) {
+      msg = 'The input is not a valid number';
+    } else {
+      msg = (number %2 == 0) ? "Even Number" : "Odd Number";
+    }
+  } else {
+    msg = 'You cancelled the action';
+  }
+  document.getElementById('result').innerText = msg;
+}
+
+let customPrompt = new function(msg, callback) {
+  this.show = function() {
+    let dlg = docuent.getElementById('dialog-container');
+    dlg.style.top = '10%';
+    dlg.style.opacity = 1;
+    let dlgMessage = dlg.querySelector('#dlg-message');
+
+  };
+}
+
 //
 // function userEventDate (year, month, day) {
 //   let newEventDate = new Date(year, month, day);
