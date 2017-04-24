@@ -58,13 +58,18 @@
           <input id="dialogInputElYear" type="text" class="dialog-input-element" placeholder="year">
         </div>
         <div class="dialog-footer">
-          <a onclick="alert(You clicked the 'Okay' button);">Okay</a>
-          <a onclick="alert('You clicked the 'Cancel' button);">Cancel</a>
+          <input class="dialog-button" id="okay-button" name="okay" type="submit" value="Okay">
+
+          <!-- <input id="guess-button" class="guess-button" name="guess" type="submit" value="Guess" /> -->
+
+          <input class="dialog-button" value="Cancel" type="button" onclick="alert('You clicked the 'Cancel' button);">
         </div>
       </div>
     </div>
 
-
+    <div>
+      <p id="test-day">Test</p>
+    </div>
 
 
     <script type="text/javascript" src="./assets/scripts/main.js"></script>

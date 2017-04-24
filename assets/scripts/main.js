@@ -1,6 +1,6 @@
 function countdown(newEventDate) {
   let now = new Date()
-  let eventDate = new Date(2017, 3, 16);
+  let eventDate = new Date(2017, 11, 16);
   // month is month number -1 (april = 4 - 1)
   let currentTime = now.getTime();
   // eventdate = newEventDate;
@@ -35,10 +35,10 @@ function popupDate () {
 
 // function popupDate () {
 //   // if (document.addEventListener("click") === true) {
-//     let newDay = prompt("Choose a day.");
-//     let newMonthInput = prompt("Choose a month. (Use numbers)");
+//     let newDay =
+//     let newMonthInput =
 //     // let newMonth = newMonthInput - 1;
-//     let newYear = prompt("Choose a year. (Use four digits)");
+//     let newYear =
 //     newEventDate = new Date(newYear, newMonth, newDay);
 //     alert(newEventDate);
 //     // countDown(newEventDate);
@@ -111,11 +111,27 @@ let customPrompt = new function(msg, callback) {
   };
 }
 
-//
+let okayButton = document.getElementById("okay-button");
+  okayButton.addEventListener('click', function () {
+    let inputDay = document.getElementById("dialogInputElDay").value;
+    let inputMonth = document.getElementById("dialogInputElMonth").value;
+    let inputYear = document.getElementById("dialogInputElYear").value;
+    console.log(inputDay, inputMonth, inputYear);
+  })
+
+
+
+
 // function userEventDate (year, month, day) {
 //   let newEventDate = new Date(year, month, day);
 //   return newEventDate;
 // }
+// =====
+// newDay = document.getElementById('dialogInputElDay').value;
+// document.getElementById('test-day').innerHtml = newDay;
+//
+// =====
+//
 //
 // msg1 = "Year?";
 // msg2 = "Month?";
