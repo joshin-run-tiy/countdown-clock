@@ -1,10 +1,13 @@
-function countdown(a, b, c) {
+//issues:
+//1. countdown function updates everysecond
+//   it cannot be overriden
+//2. the variables for customCountdown function are defined only once
+//   they need to stay defined
+
+function countdown() {
   let now = new Date()
-  // console.log(eventDate);
-  // if (eventDate == undefined)
-  let eventDate = new Date(2017, 4, 30);
+  let eventDate = new Date(2017, 11, 25);
   let currentTime = now.getTime();
-  // eventdate = newEventDate;
   let eventTime = eventDate.getTime();
 
   let remTime = eventTime - currentTime;
@@ -13,6 +16,7 @@ function countdown(a, b, c) {
   let m = Math.floor(s / 60);
   let h = Math.floor(m / 60);
   let d = Math.floor(h / 24);
+
   h %= 24;
   m %= 60;
   s %= 60;
@@ -28,28 +32,9 @@ function countdown(a, b, c) {
 
   setTimeout(countdown, 1000);
 }
-window.onload = countdown;
+let x = countdown();
+window.onload = x;
 
-// var startTime;
-//
-// function startTime() {
-//     startTime = setTimeout(function(){ alert("Hello"); }, 10000);
-// }
-//
-// function stopTime() {
-//     clearTimeout(myVar);
-// }
-
-
-
-function popupDate () {
-  alert('Change the date by using the Custom Date prompt.');
-}
-
-function popupTitle() {
-  let newTitle = prompt("What would you like to name your countdown clock?");
-  document.getElementById('clockTitle').innerHTML = newTitle;
-}
 
 
 function validateNumber(number) {
@@ -77,27 +62,21 @@ let customPrompt = new function(msg, callback) {
 }
 
 let okayButton = document.getElementById("okay-button");
-  okayButton.addEventListener('click', function customInput() {
+  okayButton.addEventListener('click', function () {
+    customCountdown();
+  });
+
+  function customCountdown() {
     let inputDay = document.getElementById("dialogInputElDay").value;
     let inputMonth = +document.getElementById("dialogInputElMonth").value - 1;
     let inputYear = document.getElementById("dialogInputElYear").value;
-    console.log(inputYear, inputMonth, inputDay);
-    customCountDown(inputYear, inputMonth, inputDay);
-
-  })
-
-    function customCountDown(inputYear, inputMonth, inputDay) {
-
     let now = new Date()
     let customDate = new Date(inputYear, inputMonth, inputDay);
     countdown(customDate);
-    console.log(customDate);
-    let currentTime = now.getTime();
 
+    let currentTime = now.getTime();
     let eventTime = customDate.getTime();
-    console.log(eventTime);
     let remTime = eventTime - currentTime;
-    console.log(remTime);
 
     let s = Math.floor(remTime / 1000);
     let m = Math.floor(s / 60);
@@ -108,19 +87,23 @@ let okayButton = document.getElementById("okay-button");
     m %= 60;
     s %= 60;
     console.log(d, h, m, s);
-    h = (h < 10) ? "0" + h : h;
-    m = (m < 10) ? "0" + m : m;
-    s = (s < 10) ? "0" + s : s;
 
     document.getElementById("days").innerText = d;
     document.getElementById("hours").innerText = h;
     document.getElementById("minutes").innerText = m;
     document.getElementById("seconds").innerText = s;
-    console.log(d, h, m, s);
-    clearTimeout(countdown);
-    // setTimeout(, 1000);
-    setTimeout(customCountDown, 1000);
-}
+    
+    setTimeout(customCountdown, 1000);
+  }
+
+  function popupDate () {
+    alert('Change the date by using the Custom Date prompt.');
+  }
+
+  function popupTitle() {
+    let newTitle = prompt("What would you like to name your countdown clock?");
+    document.getElementById('clockTitle').innerHTML = newTitle;
+  }
 
 
 // function userEventDate (year, month, day) {
